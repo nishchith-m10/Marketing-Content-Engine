@@ -1,0 +1,44 @@
+# Example Configuration for Marketing Content Engine
+
+brand:
+  name: "Acme Corporation"
+  colors:
+    - "#0066CC"
+    - "#FFFFFF"
+    - "#FF6600"
+  fonts:
+    - "Roboto"
+    - "Open Sans"
+  tone: "professional"
+  voice: "engaging"
+  guidelines: |
+    Brand Guidelines:
+    - Always use company name in full on first mention
+    - Maintain professional but approachable tone
+    - Use clear, concise language
+    - Focus on customer benefits
+    - Include call-to-action in all content
+
+ai:
+  provider: "openai"
+  model: "gpt-4"
+  temperature: 0.7
+  max_tokens: 2000
+
+media:
+  video_resolution: "1920x1080"
+  video_fps: 30
+  video_format: "mp4"
+  audio_bitrate: "192k"
+
+distribution:
+  platforms:
+    - "youtube"
+    - "instagram"
+    - "linkedin"
+    - "facebook"
+  auto_publish: false
+  scheduling_enabled: true
+
+output_dir: "./output"
+state_db_path: "./state.db"
