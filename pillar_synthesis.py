@@ -5,7 +5,7 @@ Media Synthesis Module
 Third operational pillar: Creates video content from creative direction.
 """
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from pathlib import Path
 import json
 from datetime import datetime
@@ -92,7 +92,7 @@ class VideoQualityChecker:
     def __init__(self, config: EngineConfig):
         self.config = config
     
-    def check_quality(self, video: VideoContent) -> Dict[str, any]:
+    def check_quality(self, video: VideoContent) -> Dict[str, Any]:
         """
         Check video quality metrics.
         
@@ -143,7 +143,7 @@ class MediaSynthesisPillar:
         self.video_generator = VideoGenerator(config)
         self.quality_checker = VideoQualityChecker(config)
     
-    def synthesize_video(self, direction: CreativeDirection) -> Dict[str, any]:
+    def synthesize_video(self, direction: CreativeDirection) -> Dict[str, Any]:
         """
         Synthesize video content from creative direction.
         
@@ -170,7 +170,7 @@ class MediaSynthesisPillar:
             'quality_report': quality_report
         }
     
-    def batch_synthesize(self, directions: List[CreativeDirection]) -> Dict[str, any]:
+    def batch_synthesize(self, directions: List[CreativeDirection]) -> Dict[str, Any]:
         """
         Synthesize multiple videos in batch.
         

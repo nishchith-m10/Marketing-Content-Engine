@@ -5,7 +5,7 @@ Content Ingestion Module
 First operational pillar: Processes and validates content ideas.
 """
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from datetime import datetime
 import validators
 from models import ContentIdea, ContentType, ContentStatus
@@ -18,7 +18,7 @@ class ContentValidator:
     def __init__(self, config: EngineConfig):
         self.config = config
     
-    def validate_idea(self, idea: ContentIdea) -> Dict[str, any]:
+    def validate_idea(self, idea: ContentIdea) -> Dict[str, Any]:
         """
         Validate a content idea.
         
@@ -54,7 +54,7 @@ class ContentValidator:
             'errors': errors
         }
     
-    def _check_brand_safety(self, idea: ContentIdea) -> Dict[str, any]:
+    def _check_brand_safety(self, idea: ContentIdea) -> Dict[str, Any]:
         """
         Check content for brand safety concerns.
         
@@ -138,7 +138,7 @@ class ContentIngestionPillar:
         self.validator = ContentValidator(config)
         self.enricher = ContentEnricher(config)
     
-    def ingest_content(self, idea: ContentIdea) -> Dict[str, any]:
+    def ingest_content(self, idea: ContentIdea) -> Dict[str, Any]:
         """
         Ingest and process a content idea.
         
@@ -170,7 +170,7 @@ class ContentIngestionPillar:
             'idea': enriched_idea
         }
     
-    def batch_ingest(self, ideas: List[ContentIdea]) -> Dict[str, any]:
+    def batch_ingest(self, ideas: List[ContentIdea]) -> Dict[str, Any]:
         """
         Ingest multiple content ideas in batch.
         

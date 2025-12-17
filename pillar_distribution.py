@@ -5,7 +5,7 @@ Multi-Platform Distribution Module
 Fifth operational pillar: Distributes content to various platforms.
 """
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from datetime import datetime
 from models import (
     VideoContent, DistributionPlan, DistributionResult,
@@ -173,7 +173,7 @@ class PlatformOptimizer:
         self.config = config
         self.distribution_config = config.distribution
     
-    def optimize_for_platform(self, video: VideoContent, platform: Platform) -> Dict[str, any]:
+    def optimize_for_platform(self, video: VideoContent, platform: Platform) -> Dict[str, Any]:
         """
         Optimize video metadata for specific platform.
         
@@ -228,7 +228,7 @@ class PlatformOptimizer:
         }
         return times.get(platform, ["09:00-17:00"])
     
-    def _get_requirements(self, platform: Platform) -> Dict[str, any]:
+    def _get_requirements(self, platform: Platform) -> Dict[str, Any]:
         """Get platform-specific requirements."""
         requirements = {
             Platform.YOUTUBE: {
@@ -356,7 +356,7 @@ class MultiPlatformDistributionPillar:
         return plan
     
     def execute_distribution(self, plan: DistributionPlan, 
-                           video: VideoContent) -> Dict[str, any]:
+                           video: VideoContent) -> Dict[str, Any]:
         """
         Execute distribution plan.
         

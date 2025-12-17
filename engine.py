@@ -5,7 +5,7 @@ Marketing Content Engine
 Main orchestration engine that coordinates all five operational pillars.
 """
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 from datetime import datetime
 from models import (
     ContentIdea, ContentType, ContentStatus, Platform,
@@ -48,7 +48,7 @@ class MarketingContentEngine:
     
     def process_content_idea(self, idea: ContentIdea, 
                             platforms: Optional[List[Platform]] = None,
-                            auto_distribute: bool = False) -> Dict[str, any]:
+                            auto_distribute: bool = False) -> Dict[str, Any]:
         """
         Process a content idea through the complete pipeline.
         
@@ -156,7 +156,7 @@ class MarketingContentEngine:
     
     def create_campaign(self, name: str, description: str, 
                        ideas: List[ContentIdea],
-                       platforms: Optional[List[Platform]] = None) -> Dict[str, any]:
+                       platforms: Optional[List[Platform]] = None) -> Dict[str, Any]:
         """
         Create and process a complete campaign with multiple content pieces.
         
@@ -222,7 +222,7 @@ class MarketingContentEngine:
             'metrics': self.state.metrics_collector.get_campaign_metrics(campaign.id)
         }
     
-    def get_content_status(self, content_id: str) -> Dict[str, any]:
+    def get_content_status(self, content_id: str) -> Dict[str, Any]:
         """Get current status and history of content."""
         status = self.state.get_content_status(content_id)
         history = self.state.get_workflow_history(content_id)
@@ -234,7 +234,7 @@ class MarketingContentEngine:
         }
     
     def get_metrics(self, metric_type: str = "overall", 
-                   entity_id: Optional[str] = None) -> Dict[str, any]:
+                   entity_id: Optional[str] = None) -> Dict[str, Any]:
         """
         Get system metrics.
         

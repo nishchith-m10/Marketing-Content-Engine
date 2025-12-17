@@ -5,7 +5,7 @@ Creative Direction Module
 Second operational pillar: Generates brand-compliant creative guidelines.
 """
 
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Any
 import os
 from models import ContentIdea, CreativeDirection
 from config import EngineConfig
@@ -18,7 +18,7 @@ class BrandComplianceChecker:
         self.config = config
         self.brand = config.brand
     
-    def check_compliance(self, direction: CreativeDirection) -> Dict[str, any]:
+    def check_compliance(self, direction: CreativeDirection) -> Dict[str, Any]:
         """
         Check if creative direction complies with brand guidelines.
         
@@ -155,7 +155,7 @@ class CreativeGenerator:
                 "Call to Action: Next steps and engagement (300s+)"
             ]
     
-    def _generate_scenes(self, idea: ContentIdea, narrative_arc: List[str]) -> List[Dict[str, any]]:
+    def _generate_scenes(self, idea: ContentIdea, narrative_arc: List[str]) -> List[Dict[str, Any]]:
         """Generate scene breakdown."""
         scenes = []
         duration_per_arc = idea.duration_seconds / len(narrative_arc)
@@ -223,7 +223,7 @@ class CreativeDirectionPillar:
         self.generator = CreativeGenerator(config)
         self.compliance_checker = BrandComplianceChecker(config)
     
-    def create_direction(self, idea: ContentIdea) -> Dict[str, any]:
+    def create_direction(self, idea: ContentIdea) -> Dict[str, Any]:
         """
         Create creative direction for a content idea.
         
