@@ -790,6 +790,6 @@ If this project helped you, please consider giving it a star!
 ---
 
 <p align="center">
-  <b>Built with ❤️ using AI</b><br/>
-  <sub>GPT-4o • Claude • Veo3 • Sora • ElevenLabs</sub>
+  <b>Built with  using AI</b><br/>
+  <sub>Open AI • Claude • Veo3 • Sora • ElevenLabs • Supabase  </sub>
 </p>
